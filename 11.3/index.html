@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Kanban</title>
+</head>
+
+<body>
+  <div id="board" class="board">
+    <h1>Kanban board</h1>
+    <button class="create-column">Add a column</button>
+    <div class="column-container"></div>
+  </div>
+  <!-- kolumna -->
+  <script id="column-template" type="x-tmpl-mustache">
+      <div class="column">
+          <h2 class="column-title">{{ name }}</h2>
+          <ul id={{ id }} class="column-card-list"></ul>
+          <button class="btn-delete">X</button>
+          <button class="add-card">Add a card</button>
+      </div>
+  </script>
+  
+  <script src="vendor/mustache.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
