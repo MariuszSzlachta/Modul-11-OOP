@@ -6,7 +6,8 @@ function Phone(brand, price, color){
 
   Phone.prototype.printInfo = function(){
     console.log('This phone brand is ' + this.brand + '. It costs ' + this.price + '  and color is: ' + this.color + '.');
-
+  }
+  
   Phone.prototype.turnOff = function(){
     alert('Type "yes" to turn off your phone');
     var command = window.prompt();
@@ -25,7 +26,7 @@ function Phone(brand, price, color){
     var computed = eval(window.prompt('Enter here your math operation'));
     alert('You result is: ' + computed);
   }
-}
+
 
 var samsung = new Phone('Samsung Galaxy S6', 1000, 'graphite');
 var iphone = new Phone('Iphone 6s', 1200, 'pearl white');
