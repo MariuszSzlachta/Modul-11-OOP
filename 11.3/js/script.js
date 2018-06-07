@@ -26,7 +26,8 @@
       this.id = randomString(); // generowanie id
       this.name = name; // nazwa
       this.element = generateTemplate('column-template', {
-        name: this.name
+        name: this.name,
+        id: this.id
       }); // do element generujemy element nazwa: column-template, dane do mustache
 
       // dodaj funkcjonalość do klasy Column by każda stworzona instancja na kliknięcie elementu z klasą 'btn-delete' odpalała usówanie kolumny, a kliknięcie elementu z klasą addCard tworzyło nową instancję Card której nazwę pobierze z prompta.
@@ -78,19 +79,18 @@
       name: "Kanban Board", // nazwa
       addColumn: function (column) {
         this.element.appendChild(column.element); // dodaje możliwosc tworzenia kolumn // usówanie bezpośrednio z danej kolumny dlatego w column
-        // initSortable(column.id);
+        initSortable(column.id);
       },
       element: document.querySelector('#board .column-container')
     }
-    // //init sortable
-    // function initSortable(id) {
-    //   var el = document.getElementById(id);
-    //   console.log(el);
-    //   var sortable = Sortable.create(el, {
-    //     group: 'kanban',
-    //     sort: true
-    //   });
-    // }
+    //init sortable
+    function initSortable(id) {
+      var el = document.getElementById(id);
+      var sortable = Sortable.create(el, {
+        group: 'kanban',
+        sort: true
+      });
+    }
 
     document.querySelector('#board .create-column').addEventListener('click', function () {
       var name = prompt('Enter a column name');
