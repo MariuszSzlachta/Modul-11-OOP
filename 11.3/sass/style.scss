@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+$primary-text: #2d3436;
+$white: #fff;
+$light-gray: #b2bec3;
+$dark-green: rgba(0,184,148,0.7);
+$light-green: rgba(0,184,148,0.4);
+
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+  background-color: rgba(143,245,241,1);
+  background: linear-gradient(45deg, rgba(143,245,241,1) 0%, rgba(143,238,114,1) 71%, rgba(143,238,114,1) 100%) fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $primary-text;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    background-color: $dark-green;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    color: $white;
+  }
+  .create-column {
+    align-self: center;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 3px;
+    background-color: $dark-green;
+    color: $white;
+    font-size: 1.6rem;  
+  }
+}
+.column-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+.column-title {
+  text-align: center;
+  padding: 1rem;
+  background-color: $light-green;
+  color: $white;
+  width: 100%;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  border-radius: 3px;
+}
+.column-card-list {
+  width: 100%;
+  min-height: 30px;
+  list-style: none;
+  padding: 0;
+  li {
+    margin-bottom: 4px;
+  }
+}
+.column-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  .btn {
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 3px;
+    background-color: $dark-green;
+    color: $white;
+  }
+}
+.card {
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  border-radius: 3px;
+  .btn-delete {
+    margin-left: 20px;
+    background-color: $white;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.card-description {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 700px){
+  .column-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px){
+  .board h1 {
+    font-size: 2.4rem;
+  }
+  .column-title {
+    font-size: 2rem;
+  }
+  .card-description{
+    font-size: 1.6rem;
+  }
+}

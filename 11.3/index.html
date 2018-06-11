@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="vendor/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Kanban</title>
+</head>
+
+<body>
+  <div id="board" class="board">
+    <h1>Kanban board</h1>
+    <button class="btn create-column">add column</button>
+    <div class="column-container"></div>
+  </div>
+
+  <script id="column-template" type="x-tmpl-mustache">
+      <div class="column">
+          <h2 class="column-title">{{ name }}</h2>
+          <ul id={{ id }} class="column-card-list"></ul>
+          <div class="column-footer">
+            <button class="btn btn-delete">delete column</button>
+            <button class=" btn add-card">add card</button>
+          </div>
+      </div>
+  </script>
+  <script id="card-template" type="x-tmpl-mustache">
+    <div class="card">
+      <p class="card-description">{{ description }}</p>
+      <button class=" btn btn-delete">&#x2718</button>
+    </div
+  </script>
+  
+  <script src="vendor/mustache.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
