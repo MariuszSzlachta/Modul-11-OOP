@@ -11,7 +11,6 @@ body {
   font-size: 1rem;
   background-color: #8ff5f1;
   background: linear-gradient(45deg, #8ff5f1 0%, #8fee72 71%, #8fee72 100%) fixed;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ff5f1', endColorstr='#8fee72', GradientType=1 );
   background-repeat: no-repeat;
   background-size: cover;
   color: #2d3436;
@@ -84,6 +83,7 @@ body {
 
 .column-card-list {
   width: 100%;
+  min-height: 30px;
   list-style: none;
   padding: 0;
 }
